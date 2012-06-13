@@ -14,6 +14,7 @@ class ClientEvent
   def incoming(message, callback)
     faye_msg = FayeMessage.new(message)
     puts faye_msg.inspect
+    puts client_list.inspect
 
     return callback.call(message) unless MONITORED_CHANNELS.include? faye_msg.channel
 

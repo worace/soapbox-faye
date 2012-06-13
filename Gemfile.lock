@@ -36,6 +36,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  em-http-request
   faye
   hashie
   rack

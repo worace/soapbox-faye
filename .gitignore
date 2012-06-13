@@ -1,0 +1,10 @@
+.rvmrc
+db/*.sqlite3
+Vagrantfile
+.vagrant
+
+.bundle
+/vendor
+/log
+/tmp
+/bin

@@ -1,7 +1,7 @@
 module FayeConfig
   FAYE_TOKEN = "fayeforall"
   ROOT_URL   = "http://localhost"
-  FAYE_PORT  = "9999"
+  FAYE_PORT  = "9998"
   FAYE_URL   = ROOT_URL+":"+FAYE_PORT+"/faye"
 
   SERVICE_PORT_COMMENTS = "81"

@@ -1,5 +1,5 @@
 module FayeConfig
-  if ENV['RACK_ENV'] == 'development'
+  if ENV['FAYE_ENV'] == 'development'
     ROOT_URL   = "http://localhost"
   else
     ROOT_URL   = "http://soapbox.im"

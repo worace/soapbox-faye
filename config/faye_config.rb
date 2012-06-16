@@ -1,6 +1,11 @@
 module FayeConfig
+  if ENV['RACK_ENV'] == 'development'
+    ROOT_URL   = "http://localhost"
+  else
+    ROOT_URL   = "http://soapbox.im"
+  end
+
   FAYE_TOKEN = "fayeforall"
-  ROOT_URL   = "http://localhost"
   FAYE_PORT  = "9998"
   FAYE_URL   = ROOT_URL+":"+FAYE_PORT+"/faye"
 

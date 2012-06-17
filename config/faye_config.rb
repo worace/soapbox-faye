@@ -1,5 +1,5 @@
 module FayeConfig
-  if ENV['FAYE_ENV'] == 'development'
+  if system_has_user("vagrant")
     ROOT_URL   = "http://localhost"
   else
     ROOT_URL   = "http://soapbox.im"
@@ -11,4 +11,8 @@ module FayeConfig
 
   SERVICE_PORT_COMMENTS = "81"
   SERVICE_URL_COMMENTS  = ROOT_URL+":"+SERVICE_PORT_COMMENTS
+
+  def system_has_user(user_name)
+    `cat /etc/passwd |cut -d: -f1`.include?(user_name)
+  end
 end

@@ -28,7 +28,7 @@ class FayeMessage
   end
 
   def subscription_channel
-    message.subscription
+    "/presentation/#{presentation_id}"
   end
 
   def channel

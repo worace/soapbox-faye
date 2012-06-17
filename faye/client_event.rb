@@ -20,6 +20,7 @@ class ClientEvent
 
     if name = get_client_name(faye_msg, faye_msg.action)
       puts "about to publish a message!"
+      puts faye_msg.subscription_channel
       #faye_msg.subscription ||= "/presentation/#{faye_msg.ext.presentation_id}"
       faye_client.publish(faye_msg.subscription_channel, faye_msg.build_hash(name, client_list.user_list(faye_msg.presentation_id)))
     end

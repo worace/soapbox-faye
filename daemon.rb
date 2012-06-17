@@ -4,13 +4,13 @@ base_dir = File.expand_path("..", __FILE__)
 
 NAME="faye"
 PID="#{base_dir}/tmp/pids/#{NAME}.pid"
-COMMAND="bundle exec rackup faye.ru -s thin -E production -p 9998"
+COMMAND="bundle 1>log/start.stdout.log 2>log/start.stderr.log exec thin -R faye.ru -l log/thin.log -e production -p 9998"
 
 case ARGV[0]
 when "start"
   pid = fork do
     Dir.chdir(base_dir)
-    exec *COMMAND.split(' ')
+    exec COMMAND
   end
   Process.detach(pid)
   File.open(PID, "w+") do |f|

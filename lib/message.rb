@@ -38,12 +38,14 @@ class FayeMessage
   def build_hash(name, user_list)
     message_hash = {}
     if action == 'subscribe'
-      message_hash['message'] = { 'content' => "#{name} has entered chat"}
+      message_hash['message'] = { 'content' => "#{name} entered the room.",
+                                  'comment_type' => 'room_entry'}
       message_hash['type'] = 'event'
       message_hash['user_name'] = name
       message_hash['user_list'] = user_list
     elsif action == 'disconnect'
-      message_hash['message'] = { 'content' => "#{name} has left chat" }
+      message_hash['message'] = { 'content' => "#{name} left the room.",
+                                  'comment_type' => 'room_exit' }
       message_hash['type'] = 'event'
       message_hash['user_list'] = user_list
     end

@@ -12,8 +12,12 @@ class ClientEvent
   end
 
   def incoming(message, callback)
+    puts "Faye client is pointing at this URL:"
+    puts FayeConfig::FAYE_URL
+    puts ""
     faye_msg = FayeMessage.new(message)
     puts faye_msg.inspect
+    puts ""
     puts client_list.inspect
 
     return callback.call(message) unless MONITORED_CHANNELS.include? faye_msg.channel

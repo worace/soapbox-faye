@@ -12,5 +12,4 @@ fi
 
 cd "$DIR"
 
-# start|stop
-exec ./daemon.rb $1
+exec bundle exec rackup faye.ru -s thin -E production -p 9998 -D -P tmp/pids/faye.pid
